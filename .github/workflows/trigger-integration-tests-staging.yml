@@ -17,8 +17,11 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  print-username:
+  print-environment:
     runs-on: ubuntu-latest
+    steps:
+    - name: Print the environment input
+      run: echo The environment is ${{ inputs.environment }}
   
   call-run-integration-tests:
     uses: gileli121/integration-tests-dummy/.github/workflows/integration-tests.yml@master
