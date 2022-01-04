@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Integration Tests
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Specify here the plugin installation environment. Can be development / staging / production. Empty field = staging'
+        type: string
+  workflow_run:
+   workflows:
+     - Deploy Staging
+   types:
+     - completed
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  print-username:
+    runs-on: ubuntu-latest
+  
+  call-run-integration-tests:
+    uses: gileli121/integration-tests-dummy/.github/workflows/integration-tests.yml@master
+    with:
+      environment: Staging
+#     secrets:
+#       envPAT: ${{ secrets.envPAT }}
