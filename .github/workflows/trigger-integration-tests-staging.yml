@@ -22,10 +22,4 @@ jobs:
     steps:
     - name: Print the environment input
       run: echo The environment is ${{ inputs.environment }}
-  
-  call-run-integration-tests:
-    uses: gileli121/integration-tests-dummy/.github/workflows/integration-tests.yml@master
-    with:
-      environment: Staging
-  #     secrets:
-  #       envPAT: ${{ secrets.envPAT }}
+
