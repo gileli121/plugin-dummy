@@ -30,7 +30,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run script.sh
         run: | 
-          chmod +x the_file_name
+          chmod +x script.sh
           ./script.sh
   run-integration-tests:
     needs: [reinstall-latest-plugin]
