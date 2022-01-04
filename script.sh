@@ -8,4 +8,4 @@
 
  
 # print it 
-echo "Hello from plugin!"
+echo "Hello from plugin! (v2)"
